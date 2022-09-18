@@ -20,9 +20,9 @@ pip install -r requirements.txt
 
 To run the program, please edit the cfg.yaml and add your username, password to LinkedIn. The school name is used for filtering your alumni.
 ```yaml cfg.yaml
-username:
-password:
-school:
+username: user@email.com
+password: pwd
+school: ABC University
 ```
 
 Then it can be started by: 
