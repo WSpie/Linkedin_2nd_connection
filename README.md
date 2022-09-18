@@ -13,6 +13,8 @@ Your default chrome version can be checked by tips here: https://www.digitalciti
 Driver can be download here: https://chromedriver.chromium.org/downloads
 
 ## Run the code
+Download the necessary packages by: """bash
+pip install -r requirements.txt"""
 
 To run the program, please edit the cfg.yaml and add your username, password to LinkedIn. The school name is used for filtering your alumni.
 
