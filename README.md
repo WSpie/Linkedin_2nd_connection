@@ -1,5 +1,9 @@
 # Linkedin_2nd_connection
 
+## Pinned
+
+Seeking contributors familiar with IOS system using selenium to finalize this program
+
 ## Configuration
 
 Version 1 for Win10, google chrome webdriver 105
