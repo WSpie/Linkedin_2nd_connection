@@ -16,7 +16,7 @@ Driver can be download here: https://chromedriver.chromium.org/downloads
 
 To run the program, please edit the cfg.yaml and add your username, password to LinkedIn. The school name is used for filtering your alumni.
 
-Then it can be staeted by: python run.py
+Then it can be started by: python run.py
 
 The whole flow can be prsented by demo_processed.mp4
 
