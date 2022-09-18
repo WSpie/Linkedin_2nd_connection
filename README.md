@@ -15,3 +15,4 @@ The whole flow can be prsented by demo_processed.mp4
 
 https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-8c74-01225fdcdcff.mp4
 
+LinkedIn official may ask you to check the unusual activities caused by a great amout of user profiles viewing. Use this program rationally.
