@@ -2,7 +2,7 @@
 
 ## Configuration
 
-Version 1 for Win10, google chrome webdriver 15
+Version 1 for Win10, google chrome webdriver 105
 
 Make sure your default chrome version matches the driver you wanna use!
 
