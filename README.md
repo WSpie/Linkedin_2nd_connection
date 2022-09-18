@@ -20,7 +20,10 @@ pip install -r requirements.txt
 
 To run the program, please edit the cfg.yaml and add your username, password to LinkedIn. The school name is used for filtering your alumni.
 
-Then it can be started by: python run.py
+Then it can be started by: 
+```bash shell
+python run.py
+```
 
 The whole flow can be prsented by demo_processed.mp4
 
