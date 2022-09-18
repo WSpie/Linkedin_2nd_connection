@@ -12,6 +12,11 @@ Your default chrome version can be checked by tips here: https://www.digitalciti
 
 Driver can be download here: https://chromedriver.chromium.org/downloads
 
+### Download your web driver here
+```bash shell
+widget/chromedriver.exe
+```
+
 ## Run the code
 Download the necessary packages by:
 ```bash shell
