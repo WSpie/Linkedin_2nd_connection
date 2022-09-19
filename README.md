@@ -49,4 +49,4 @@ LinkedIn official may ask you to check the unusual activities caused by a great 
 
 <img src="https://user-images.githubusercontent.com/66770967/190923752-10d738f1-c683-4276-9a6a-fd959e655e9f.png" width="600" height="400">
 
-If this warning displayed, just wait as required.
+If this warning displayed, just wait as required. I will add more humanlike operations in ver 2.0.
