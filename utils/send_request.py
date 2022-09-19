@@ -4,6 +4,18 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import random
+
+def random_scroll(driver):
+    seg = 100
+    height = driver.execute_script("return document.body.scrollHeight")
+    scroll_choice = [f"window.scrollTo(0,{int(i*seg)})" for i in range(height//10 - 1)]
+    scroll_move_list = random.choices(scroll_choice, weights=[100/len(scroll_choice)]*len(scroll_choice), k=random.randint(1, 5))
+    print(scroll_move_list)
+    for scroll_move in scroll_move_list:
+        driver.execute_script(scroll_move)
+        time.sleep(random.random())
+    return driver
 
 def request_and_next_page(driver, config, logger):
 
@@ -14,7 +26,7 @@ def request_and_next_page(driver, config, logger):
             # driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
             # driver.implicitly_wait(10)
             # driver.execute_script("window.scrollTo(0,0)")
-            time.sleep(1)
+            time.sleep(random.randint(1, 2))
             # soup = BeautifulSoup(driver.page_source, 'html.parser')
             # people_blks = soup.select('ul.reusable-search__entity-result-list li.reusable-search__result-container')
             # blks_num = len(people_blks)
@@ -35,7 +47,8 @@ def request_and_next_page(driver, config, logger):
                 # open personal page
                 driver.get(person_url)
                 driver.implicitly_wait(20)
-                time.sleep(2)
+                driver = random_scroll(driver)
+                time.sleep(random.randint(1, 2))
                 # get first name or preferred name
                 person_soup = BeautifulSoup(driver.page_source, 'html.parser')
                 full_name = person_soup.select('h1.text-heading-xlarge')[0].text
@@ -72,12 +85,12 @@ def request_and_next_page(driver, config, logger):
                     notes = notes.replace('?name?', name).replace('?school?', config.school)
                     connect_btn = driver.find_element_by_xpath('//span[text()="Connect"]')
                     driver.execute_script('arguments[0].click();', connect_btn)
-                    driver.implicitly_wait(10)
+                    time.sleep(random.randint(1, 2))
                     add_note_btn = driver.find_element_by_xpath('//span[text()="Add a note"]')
                     driver.execute_script('arguments[0].click();', add_note_btn)
-                    driver.implicitly_wait(10)
+                    time.sleep(random.randint(1, 2))
                     driver.find_element_by_xpath('//*[@id="custom-message"]').send_keys(notes)
-                    time.sleep(2)
+                    time.sleep(random.randint(1, 2))
                     driver.implicitly_wait(10)
                     send_btn = driver.find_element_by_xpath('//span[text()="Send"]')
                     driver.execute_script('arguments[0].click()', send_btn)
