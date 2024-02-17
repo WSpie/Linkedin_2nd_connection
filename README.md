@@ -32,7 +32,6 @@ The whole flow can be prsented by demo_processed.mp4
 
 https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-404e-9e72-daafe25457fa
 
-<!-- https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-8c74-01225fdcdcff.mp4 -->
 
 ## Warnings
 
