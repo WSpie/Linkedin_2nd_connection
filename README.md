@@ -1,7 +1,7 @@
 # Linkedin_2nd_connection
 
 This project aims to automatically send connection requests to your **2nd connections who are also your alumni** judging based on your highlights. To run this code, your *python* version should be *3.7/8/9/10/11*. 
-## Set up (*Tested OS: Windows x64*)
+## Set up (*Tested OS: Windows*, *Linux*)
 Pip install required packages
 ```bash shell
 pip install -r requirements.txt
@@ -35,6 +35,8 @@ https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-4
 
 
 ## Warnings
+
+- After multiple attempts in a short time, you may encounter login problem requiring you to verify your email. We will add auto verification function in the future.
 
 - If you are not Premium member, you will only have limited connection requests to send and it will show this image if you reached the limits.
 <div align="center">

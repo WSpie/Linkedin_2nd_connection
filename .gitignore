@@ -1,3 +1,5 @@
 env/*
+scrape_env/*
 my_cfg.yaml
 *.log
+*.pyc
