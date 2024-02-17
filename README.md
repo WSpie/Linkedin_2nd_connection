@@ -7,14 +7,14 @@ Pip install required packages
 pip install -r requirements.txt
 ```
 
-## Edit [LinkedIn account setting and school name](config.yaml)
+## Edit [*LinkedIn account setting and school name*](config.yaml)
 ```yaml config.yaml
 username: user@email.com
 password: pwd
 school: ABC University # We will determine alumni based on the name of school, so be careful of typos
 ```
 
-## Edit [greeting text](greeting_alumni.txt) if needed
+## Edit [*greeting text*](greeting_alumni.txt) if needed
 ```text greeting_alumni.txt
 Hi ?name?
 I noticed you are also in the ?school? Alumni networking group here on LinkedIn, and I really hope to have one of your connections. Best regards.
