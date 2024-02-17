@@ -30,7 +30,6 @@ python run.py --headless [bool: False] --config [path: 'config.yaml'] --request-
 
 The whole flow can be prsented by demo_processed.mp4
 
-/display/demo_processed.mp4
 
 https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-8c74-01225fdcdcff.mp4
 
@@ -38,7 +37,7 @@ https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-
 
 If you are not Premium member, you will only have limited connection requests to send and it will show this image if you reached the limits.
 
-<img src="display\need_premium.png" width="200" height="200">
+<img src="display\need_premium.png" width="300" height="200">
 
 If you are already a Premium member, LinkedIn official may ask you to check the unusual activities caused by a great amount of user profiles viewing. Use this program rationally.
 
