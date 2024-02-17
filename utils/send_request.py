@@ -17,11 +17,11 @@ def random_scroll(driver):
         time.sleep(random.random())
     return driver
 
-def request_and_next_page(driver, config, logger):
-
+def request_and_next_page(driver, config, logger, total_requests, greeting_txt_path):
+    sent_request_cnt = 0
     driver.implicitly_wait(10)
     page = 1
-    while True:
+    while sent_request_cnt < total_requests:
         try:
             # driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
             # driver.implicitly_wait(10)
@@ -34,13 +34,15 @@ def request_and_next_page(driver, config, logger):
             blks_num = len(people_blks)
             for blk in range(blks_num):
                 # only open the url 'Connect' available
-                status = people_blks[blk].find_element_by_css_selector('span.artdeco-button__text').text
+                # status = people_blks[blk].find_element_by_css_selector('span.artdeco-button__text').text
+                status = people_blks[blk].find_element(By.CSS_SELECTOR, 'span.artdeco-button__text').text
                 # status = people_blks[blk].select('button.artdeco-button span.artdeco-button__text')[0].text
                 # status = status.replace('\n', '').replace(' ', '')
                 if status != 'Connect':
                     continue
                 # person_url = people_blks[blk].select('a.app-aware-link')[0]['href']
-                person_url = people_blks[blk].find_element_by_css_selector('a.app-aware-link').get_attribute('href')
+                # person_url = people_blks[blk].find_element_by_css_selector('a.app-aware-link').get_attribute('href')
+                person_url = people_blks[blk].find_element(By.CSS_SELECTOR, 'a.app-aware-link').get_attribute('href')
                 driver.execute_script("window.open('');")
                 driver.switch_to.window(driver.window_handles[1])
                 
@@ -80,22 +82,27 @@ def request_and_next_page(driver, config, logger):
                 # send connection invitation to alumni with greetings
                 if person_type == 'Alumni':
                     notes = ''
-                    with open('greeting_alumni.txt', 'r') as f:
+                    with open(greeting_txt_path, 'r') as f:
                         notes = ''.join(f.readlines())
                     notes = notes.replace('?name?', name).replace('?school?', config.school)
-                    connect_btn = driver.find_element_by_xpath('//span[text()="Connect"]')
+                    # connect_btn = driver.find_element_by_xpath('//span[text()="Connect"]')
+                    connect_btn = driver.find_element(By.XPATH, '//span[text()="Connect"]')
                     driver.execute_script('arguments[0].click();', connect_btn)
                     time.sleep(random.randint(1, 2))
-                    add_note_btn = driver.find_element_by_xpath('//span[text()="Add a note"]')
+                    # add_note_btn = driver.find_element_by_xpath('//span[text()="Add a note"]')
+                    add_note_btn = driver.find_element(By.XPATH, '//span[text()="Add a note"]')
                     driver.execute_script('arguments[0].click();', add_note_btn)
                     time.sleep(random.randint(1, 2))
-                    driver.find_element_by_xpath('//*[@id="custom-message"]').send_keys(notes)
+                    # driver.find_element_by_xpath('//*[@id="custom-message"]').send_keys(notes)
+                    driver.find_element(By.XPATH, '//*[@id="custom-message"]').send_keys(notes)
                     time.sleep(random.randint(1, 2))
                     driver.implicitly_wait(10)
-                    send_btn = driver.find_element_by_xpath('//span[text()="Send"]')
+                    # send_btn = driver.find_element_by_xpath('//span[text()="Send"]')
+                    send_btn = driver.find_element(By.XPATH, '//span[text()="Send"]')
                     driver.execute_script('arguments[0].click()', send_btn)
                     driver.implicitly_wait(10)
-                    logger.record(name)
+                    sent_request_cnt += 1
+                    logger.record(name, sent_request_cnt, total_requests)
                 driver.close()
                 driver.switch_to.window(driver.window_handles[0])
         except:
@@ -104,7 +111,8 @@ def request_and_next_page(driver, config, logger):
         try:
             driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
             driver.implicitly_wait(10)
-            next_btn = driver.find_element_by_xpath('//span[text()="Next"]')
+            # next_btn = driver.find_element_by_xpath('//span[text()="Next"]')
+            next_btn = driver.find_element(By.XPATH, '//span[text()="Next"]')
             driver.execute_script('arguments[0].click()', next_btn)
         except:
             logger.no_next_page(page)

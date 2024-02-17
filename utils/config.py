@@ -1,19 +1,19 @@
 import os
 import yaml
 from selenium import webdriver
-from pathlib import Path
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 class Namespace:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
-def load_config():
-    config = yaml.safe_load(Path('cfg.yaml').read_text())
+def load_config(config_path):
+    config = yaml.safe_load(open(config_path).read_text())
     return Namespace(**config)
 
-def init_driver():
-    config = load_config()
-    chrome_driver_path = os.path.join('widget', 'chromedriver.exe')
+def init_driver(config_path, headless=False):
+    config = load_config(config_path)
     options = webdriver.ChromeOptions()
     options.add_argument('--incognito')
     options.add_argument('--start-maximized')
@@ -22,10 +22,11 @@ def init_driver():
     options.add_experimental_option("useAutomationExtension", False)  # Adding Argument to Not Use Automation Extension
     options.add_experimental_option("excludeSwitches", ["enable-automation"])  # Excluding enable-automation Switch
     options.add_argument("disable-popup-blocking")
-    # options.add_argument('--headless')
+    if headless:
+        options.add_argument('--headless')
     prefs = {"profile.default_content_setting_values.notifications" : 2}
     options.add_experimental_option("prefs", prefs)
-    driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     return driver, config
 
 

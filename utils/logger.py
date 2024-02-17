@@ -4,8 +4,8 @@ class Log:
     def __init__(self, config):
         self.logger = logging.getLogger(config.username)
         self.logger.setLevel(logging.DEBUG)
-        file_handler = logging.FileHandler('summary.log')
-        formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+        file_handler = logging.FileHandler('logs/summary.log')
+        formatter = logging.Formatter('%(name)s %(asctime)s %(levelname)s %(message)s')
         file_handler.setFormatter(formatter)
         self.logger.addHandler(file_handler)
         ch = logging.StreamHandler()
@@ -13,8 +13,8 @@ class Log:
         ch.setFormatter(formatter)
         self.logger.addHandler(ch)
     
-    def record(self, name):
-        self.logger.info(f'Sent request to {name}')
+    def record(self, name, cur_cnt, target_cnt):
+        self.logger.info(f'[{cur_cnt}/{target_cnt}]: Sent request to {name}')
     
     def unable_parse_page(self, page):
         self.logger.error(f'Unable to parse the page {page}')
