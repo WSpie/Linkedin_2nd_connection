@@ -37,7 +37,7 @@ https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-4
 
 - If you are not Premium member, you will only have limited connection requests to send and it will show this image if you reached the limits.
 <center>
- "https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/c8de26b9-f378-4c0f-83cf-2064bf6275f7"
+ https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/c8de26b9-f378-4c0f-83cf-2064bf6275f7
 </center>
 
 - If you are already a Premium member, LinkedIn official may ask you to check the unusual activities caused by a great amount of user profiles viewing. Use this program rationally.
