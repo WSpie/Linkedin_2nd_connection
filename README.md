@@ -1,7 +1,7 @@
 # Linkedin_2nd_connection
 
 This project aims to automatically send connection requests to your **2nd connections who are also your alumni** judging based on your highlights. To run this code, your *python* version should be *3.7/8/9/10/11*. 
-## Set up
+## Set up (*Tested OS: Windows x64*)
 Pip install required packages
 ```bash shell
 pip install -r requirements.txt
@@ -45,5 +45,3 @@ https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-4
 <div align="center">
   <img src="https://user-images.githubusercontent.com/66770967/190923752-10d738f1-c683-4276-9a6a-fd959e655e9f.png" alt="banned" width="600" height="400">
 </div>
-
-If this warning displayed, just wait as required. I will add more humanlike operations in ver 2.0.
