@@ -26,13 +26,15 @@ I noticed you are also in the ?school? Alumni networking group here on LinkedIn,
 python run.py --driver [browser: Chrome] --headless [bool: False] --config [path: 'config.yaml'] --request-num [int: 20] --greet-txt [path: greeting_alumni.txt]
 ```
 - `--driver`: browser name, support **Chrome**, Chromium, Brave, Edge, Firefox, IE (will use IE if none of the input browser matched, bolded browser tested successfullly)
-- `--headless`: hide browser while operating
+- `--headless`: **hide** browser while operating, browser will auto operate when set `False`
 - `--request-num`: the number of requests you want to send
 
 The whole flow can be prsented by demo_processed.mp4
 
 https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-404e-9e72-daafe25457fa
 
+## Waiting for new connections coming
+If you operate properly.
 
 ## Warnings
 
