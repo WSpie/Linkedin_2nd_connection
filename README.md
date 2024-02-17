@@ -30,7 +30,7 @@ python run.py --headless [bool: False] --config [path: 'config.yaml'] --request-
 
 The whole flow can be prsented by demo_processed.mp4
 
-<video src="https://github.com/WSpie/Linkedin_2nd_connection/blob/main/display/demo_processed.mp4" width="400"/>
+https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-404e-9e72-daafe25457fa
 
 <!-- https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-8c74-01225fdcdcff.mp4 -->
 
@@ -38,7 +38,7 @@ The whole flow can be prsented by demo_processed.mp4
 
 If you are not Premium member, you will only have limited connection requests to send and it will show this image if you reached the limits.
 
-<img src="display\need_premium.png" width="300" height="250">
+<img src="https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/c8de26b9-f378-4c0f-83cf-2064bf6275f7" width="300" height="250">
 
 If you are already a Premium member, LinkedIn official may ask you to check the unusual activities caused by a great amount of user profiles viewing. Use this program rationally.
 
