@@ -23,8 +23,9 @@ I noticed you are also in the ?school? Alumni networking group here on LinkedIn,
 
 ## Run the code
 ```bash shell
-python run.py --headless [bool: False] --config [path: 'config.yaml'] --request-num [int: 20] --greet-txt [path: greeting_alumni.txt]
+python run.py --driver [browser: Chrome] --headless [bool: False] --config [path: 'config.yaml'] --request-num [int: 20] --greet-txt [path: greeting_alumni.txt]
 ```
+- `--driver`: browser name, support **Chrome**, Chromium, Brave, Edge, Firefox, IE (will use IE if none of the input browser matched, bolded browser tested successfullly)
 - `--headless`: hide browser while operating
 - `--request-num`: the number of requests you want to send
 
