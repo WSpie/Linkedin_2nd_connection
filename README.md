@@ -1,43 +1,32 @@
 # Linkedin_2nd_connection
 
-## Pinned
-
-Seeking contributors familiar with IOS system using selenium to finalize this program
-
-## Configuration
-
-Version 1 for Win10, google chrome webdriver 105
-
-Make sure your default chrome version matches the driver you wanna use!
-
-### Helpful sources
-
-Your default chrome version can be checked by tips here: https://www.digitalcitizen.life/version-google-chrome/
-
-Driver can be download here: https://chromedriver.chromium.org/downloads
-
-### Download your web driver here
-```bash shell
-widget/chromedriver.exe
-```
-
-## Run the code
-Download the necessary packages by:
+This project aims to automatically send connection requests to your 2nd connections who are also your alumni judging based on your highlights. To run this code, your python version should be 3.7/8/9/10/11. 
+## Set up
+Pip install required packages
 ```bash shell
 pip install -r requirements.txt
 ```
 
-To run the program, please edit the cfg.yaml and add your username, password to LinkedIn. The school name is used for filtering your alumni.
-```yaml cfg.yaml
+## Edit [LinkedIn account setting and school name](config.yaml)
+```yaml config.yaml
 username: user@email.com
 password: pwd
-school: ABC University
+school: ABC University # We will determine alumni based on the name of school, so be careful of typos
 ```
 
-Then it can be started by: 
-```bash shell
-python run.py
+## Edit [greeting text](greeting_alumni.txt) if needed
+```text greeting_alumni.txt
+Hi ?name?
+I noticed you are also in the ?school? Alumni networking group here on LinkedIn, and I really hope to have one of your connections. Best regards.
 ```
+`?name?` will be pending connector's First name and `?school?` will be identical to the school name you configurated [here](config.yaml). 
+
+## Run the code
+```bash shell
+python run.py --headless [bool: False] --config [path: 'config.yaml'] --request-num [int: 20] --greet-txt [path: greeting_alumni.txt]
+```
+- `--headless`: hide browser while operating
+- `--request-num`: the number of requests you want to send
 
 The whole flow can be prsented by demo_processed.mp4
 
@@ -45,7 +34,11 @@ https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-
 
 ## Warnings
 
-LinkedIn official may ask you to check the unusual activities caused by a great amout of user profiles viewing. Use this program rationally.
+If you are not Premium member, you will only have limited connection requests to send and it will show this image if you reached the limits.
+
+<img src="display\need_premium.png" width="600" height="400">
+
+If you are already a Premium member, LinkedIn official may ask you to check the unusual activities caused by a great amount of user profiles viewing. Use this program rationally.
 
 <img src="https://user-images.githubusercontent.com/66770967/190923752-10d738f1-c683-4276-9a6a-fd959e655e9f.png" width="600" height="400">
 
