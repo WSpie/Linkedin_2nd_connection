@@ -30,7 +30,8 @@ python run.py --headless [bool: False] --config [path: 'config.yaml'] --request-
 
 The whole flow can be prsented by demo_processed.mp4
 
-<video src="display\demo_processed.mp4" width="600" height="400">
+display\demo_processed.mp4
+
 https://user-images.githubusercontent.com/66770967/190921368-45709366-1bed-422c-8c74-01225fdcdcff.mp4
 
 ## Warnings
