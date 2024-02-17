@@ -3,13 +3,14 @@ import yaml
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from pathlib import Path
 
 class Namespace:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
 def load_config(config_path):
-    config = yaml.safe_load(open(config_path).read_text())
+    config = yaml.safe_load(Path(config_path).read_text())
     return Namespace(**config)
 
 def init_driver(config_path, headless=False):
