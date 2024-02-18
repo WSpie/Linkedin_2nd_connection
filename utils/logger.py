@@ -19,8 +19,14 @@ class Log:
     def unable_parse_page(self, page):
         self.logger.error(f'Unable to parse the page {page}')
     
+    def unable_connect(self, name, msg):
+        self.logger.error(f'Unable to connect {name}: {msg}')
+
     def no_next_page(self, page):
         self.logger.error(f'Current page {page}, no next page')
 
     def no_free_connections(self):
         self.logger.error('No free connections left. Exit.')
+    
+    def msg(self, msg):
+        self.logger.info(msg)

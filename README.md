@@ -1,7 +1,7 @@
 # Linkedin_2nd_connection (Chrome only now)
 
 This project aims to automatically send connection requests to your **2nd connections who are also your alumni** judging based on your highlights. To run this code, your *python* version should be *3.7/8/9/10/11*. 
-## Set up (*Tested OS: Windows*, *Linux*)
+## Set up (*Tested OS: Windows (Highly Recommended)*, *Linux*)
 Pip install required packages
 ```bash shell
 pip install -r requirements.txt
@@ -32,6 +32,14 @@ The whole flow can be prsented by demo_processed.mp4
 
 https://github.com/WSpie/Linkedin_2nd_connection/assets/66770967/accad9fb-12b4-404e-9e72-daafe25457fa
 
+```bash summary.log
+DevTools listening on ws://127.0.0.1
+Easy login
+user@email 2024-02-17 21:41:20,446 INFO [1/n]: Sent request to User1
+user@email 2024-02-17 21:41:34,001 INFO [2/n]: Sent request to User2
+...
+user@email 2024-02-17 21:45:30,078 INFO Sent n connection invitations! Job Done!
+```
 ## Waiting for new connections coming
 If you operate properly.
 

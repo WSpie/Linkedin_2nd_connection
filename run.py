@@ -33,7 +33,6 @@ if __name__ == '__main__':
     # send request to alumni and next page
     logger = Log(config)
     driver = request_and_next_page(driver, config, logger, opt.request_num, opt.greet_txt)
-    
     driver.quit()
     
     
