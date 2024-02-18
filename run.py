@@ -19,14 +19,13 @@ warnings.filterwarnings('ignore')
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--driver', default='Chrome')
     parser.add_argument('--headless', type=bool, default=False)
     parser.add_argument('--config', default='config.yaml')
     parser.add_argument('--request-num', type=int, default=20)
     parser.add_argument('--greet-txt', default='greeting_alumni.txt')
     opt = parser.parse_args()
     # conifgurate driver and load user info
-    driver, config = init_driver(opt.driver.lower(), opt.config, opt.headless)
+    driver, config = init_driver(opt.config, opt.headless)
     # login
     driver = login(driver, config)
     # auto choose 2nd connection and go page 1
